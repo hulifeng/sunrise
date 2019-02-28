@@ -1,0 +1,112 @@
+{
+  "name": "首页",
+  "action": "portal/Index/index",
+  "description": "首页模板文件",
+  "is_public": "1",
+  "order": 20.0,
+  "more": {
+    "vars": {
+      "top_slide": {
+        "title": "顶部幻灯片",
+        "value": "1",
+        "type": "text",
+        "dataSource": {
+          "api": "admin/Slide/index",
+          "muti": false
+        },
+        "tip": "顶部幻灯片",
+        "rule": {
+          "require": true
+        }
+      }
+    },
+    "widgets": {
+      "first_section": {
+        "title": "第一板块",
+        "description": "优势所在",
+        "display": "1",
+        "vars": {
+          "category": {
+            "title": "文章分类",
+            "value": "",
+            "type": "text",
+            "tip": "请选择文章分类",
+            "rules": {
+              "require": true
+            },
+            "dataSource": {
+              "api": "portal/Category/index",
+              "multi": false
+            },
+            "placeholder": "请选择文章分类"
+          }
+        }
+      },
+      "second_section": {
+        "title": "第二板块",
+        "display": "1",
+        "vars": {
+          "page_id": {
+            "title": "内容单页面ID",
+            "value": "",
+            "type": "text",
+            "dataSource": {
+              "api": "portal/Page/index",
+              "multi": false
+            },
+            "tip": "该版面为单页面内容，请选择页面",
+            "rules": {
+              "require": true
+            }
+          },
+          "btn_display": {
+            "title": "是否显示下方按钮",
+            "value": "1",
+            "type": "select",
+            "options": {
+              "1": "显示",
+              "2": "隐藏"
+            },
+            "rules": {
+              "require": true
+            }
+          },
+          "btn_title": {
+            "title": "按钮文字",
+            "value": "了解详情",
+            "type": "text",
+            "tip": "该文字显示在按钮上，建议不超过6个",
+            "placeholder": "请输入按钮名称"
+          },
+          "btn_link": {
+            "title": "按钮链接",
+            "value": "javascript:;",
+            "type": "text",
+            "tip": "点击后跳转的地址，或者默认不跳转"
+          }
+        }
+      },
+      "third_section": {
+        "title": "第三板块",
+        "description": "第三板块描述",
+        "display": "1",
+        "vars": {
+          "category": {
+            "title": "公司产品",
+            "value": "",
+            "type": "text",
+            "tip": "请选择产品介绍",
+            "rules": {
+              "require": true
+            },
+            "dataSource": {
+              "api": "portal/Category/index",
+              "multi": false
+            },
+            "placeholder": "请选择商品分类"
+          }
+        }
+      }
+    }
+  }
+}

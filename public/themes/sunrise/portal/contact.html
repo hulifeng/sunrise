@@ -1,0 +1,134 @@
+<extend name="public@base"/>
+
+<block name="link">
+    <link href="__TMPL__/public/assets/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="__TMPL__/public/assets/js/respond.js"></script><![endif]-->
+</block>
+
+<block name="body">
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url(__TMPL__/public/assets/images/background/page-title-bg.jpg);">
+        <div class="auto-container">
+            <div class="sec-title">
+                <h1>Contact Us</span></h1>
+                <div class="bread-crumb"><a href="{:url('/')}">Home</a> / <a href="#" class="current">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Default Section / Other Info-->
+    <section class="default-section other-info">
+        <div class="auto-container">
+
+            <div class="row clearfix">
+
+                <!--Info Column-->
+                <div class="column info-column col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                    <article class="inner-box">
+                        <h3 class="margin-bott-20">Our Address</h3>
+                        <div class="text margin-bott-40">Lorem Ipsum is simply dummy text of the printing and typese
+                            tting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s. </div>
+                        <ul class="info-box">
+                            <li><span class="icon flaticon-location"></span><strong>ADDRESS</strong> 447-Broad Way,
+                                Newyork City, NewYork</li>
+                            <li><span
+                                    class="icon flaticon-technology-5"></span><strong>Phone</strong>+11-39-854(081),
+                                +12-39-785(031) </li>
+                            <li><span class="icon flaticon-interface-1"></span><strong>Email</strong>
+                                hello@ecology.net</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!--Form Column-->
+                <div class="column form-column col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                    <h3 class="margin-bott-20">send a message</h3>
+                    <!--COntact Form-->
+                    <div class="inner-box contact-form">
+                        <form method="post" action="sendemail.php" id="contact-form">
+                            <div class="row clearfix">
+                                <!--Form Group-->
+                                <div class="form-group col-md-6 col-xs-12">
+                                    <input type="text" name="username" value="" placeholder="Your Name">
+                                </div>
+                                <!--Form Group-->
+                                <div class="form-group col-md-6 col-xs-12">
+                                    <input type="text" name="email" value="" placeholder="Your Email">
+                                </div>
+                                <!--Form Group-->
+                                <div class="form-group col-md-12 col-xs-12">
+                                    <textarea name="message" placeholder="Message"></textarea>
+                                </div>
+
+                                <!--Form Group-->
+                                <div class="form-group col-md-12 col-xs-12">
+                                    <div class="text-right"><button type="submit"
+                                                                    class="theme-btn btn-style-two">Send</button></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--COntact Form-->
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--Contact Section-->
+    <section class="contact-section no-padd-top">
+        <div class="auto-container">
+
+            <div class="row clearfix">
+
+                <!--Map Column-->
+                <div class="column map-column col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                    <h2>Our Location on Map</h2>
+
+                    <article class="inner-box">
+                        <!--Map Container-->
+                        <div class="map-container">
+                            <!--Map Canvas-->
+                            <div class="map-canvas" data-zoom="12" data-lat="40.730610" data-lng="-73.935242"
+                                 data-type="roadmap" data-hue="#ffc400" data-title="Ecology"
+                                 data-content="Broad Way,NewYork<br><a href='mailto:info@youremail.com'>info@email.com</a>"
+                                 style="height: 380px;">
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!--Intro Section-->
+    <section class="subscribe-intro">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!--Column-->
+                <div class="column col-md-9 col-sm-12 col-xs-12">
+                    <h2>Subcribe for Newsletter</h2>
+                    There are many variations of passages of Lorem Ipsum available but the majority have
+                </div>
+                <!--Column-->
+                <div class="column col-md-3 col-sm-12 col-xs-12">
+                    <div class="text-right padd-top-20">
+                        <a href="#" class="theme-btn btn-style-one">Subscribe Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</block>

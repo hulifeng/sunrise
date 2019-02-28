@@ -1,0 +1,29 @@
+{
+  "name": "导航栏信息",
+  "action": "public/nav",
+  "description": "nav",
+  "is_public": "1",
+  "order": 10.0,
+  "more": {
+    "vars": {
+        "logo": {
+          "title": "网站LOGO",
+          "value": "",
+          "type": "image",
+          "tip": "请选择LOGO图片，建议图片底色为白色（.jpg）或透明（.png）。"
+        },
+        "site_title": {
+          "title": "网站名称",
+          "value": "森瑞斯",
+          "type": "text",
+          "tip": "网站名称必填",
+          "rules": {
+            "require":true
+          },
+          "message": {
+            "require": "不能为空"
+          }
+        }
+    }
+  }
+}

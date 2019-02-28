@@ -2076,3 +2076,26 @@ function cmf_core_path()
 {
     return __DIR__ . DIRECTORY_SEPARATOR;
 }
+
+/**
+ * 去除 html 标签
+ */
+function remove_label($string){
+
+    $string = strip_tags($string);
+
+    $string = trim($string);
+
+    $string = str_replace("\t","",$string);
+
+    $string = str_replace("\r\n","",$string);
+
+    $string = str_replace("\r","",$string);
+
+    $string = str_replace("\n","",$string);
+
+    $string = str_replace(" ","",$string);
+
+    return trim($string);
+
+}
