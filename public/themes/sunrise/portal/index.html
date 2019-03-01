@@ -129,6 +129,7 @@
     </section>
 </widget>
 
+<widget name="four_section">
     <section class="two-column-fluid">
 
 
@@ -145,40 +146,24 @@
                     <div class="clearfix">
                         <div class="strategy-tab">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#homeone" aria-controls="homeone"
-                                                                          role="tab" data-toggle="tab">Mission</a></li>
-                                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
-                                                           data-toggle="tab">Vission</a></li>
-                                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
-                                                           data-toggle="tab">Policy</a></li>
-
+                                <foreach name="$widget.vars.news" item="vo" key="key">
+                                    <li role="presentation" <if condition="$key === 0">class="active"</if>>
+                                        <a href="#controls_{$key}" aria-controls="homeone" role="tab" data-toggle="tab">{$vo.category_id_text_}</a>
+                                    </li>
+                                </foreach>
                             </ul>
 
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="homeone">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        Lorem Ipsum has been the industry's standard dummy text ever since the
-                                        1500s, when an unknown printer took a galley of type and scrambled
-                                        centuries, but also the leap into electronic typesetting, remaining
-                                        essentially unchanged.</p>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="profile">
-                                    <p>muspI meroL fo snoisrev gnidulcni rekaMegaP sudlA ekil erawtfos gnihsilbup
-                                        potksed htiw yltnecer erom dna ,segassap muspI meroL gniniatnoc steehs
-                                        tesarteL fo esaeler eht htiw s0691 eht ni desiralupop saw tI yrtsudni
-                                        gnittesepyt dna gnitnirp eht fo txet ymmud ylpmis si muspI meroL.desiralupop
-                                        saw tI yrtsudni gnittesepyt dna gnitnirp eht fo txet ymmud ylpmis si muspI
-                                        meroL..</p>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="messages">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry.Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry.Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        ting and typesetting industry.Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry.</p>
-                                </div>
-
+                                <foreach name="$widget.vars.news" item="vo" key="key">
+                                    <php>$active = $key === 0 ? 'active' : '';</php>
+                                    <div role="tabpanel" class="tab-pane {$active}" id="controls_{$key}">
+                                        <portal:articles limit="$vo['count']" order="post.published_time DESC"
+                                                         categoryIds="$vo['category_id']">
+                                            <p>{$vo.post_content}</p>
+                                        </portal:articles>
+                                    </div>
+                                </foreach>
                             </div>
                         </div>
                     </div>
@@ -189,7 +174,7 @@
 
             <article class="column right-column">
 
-                <div class="abt-img"><img src="__TMPL__/public/assets/images/resource/fluid-image-05.jpg" alt=""></div>
+                <div class="abt-img"><img src="{$widget.vars.bg_image|cmf_get_image_url}" alt=""></div>
 
                 <div class="clearfix"></div>
             </article>
@@ -197,6 +182,7 @@
         </div>
 
     </section>
+</widget>
 
     <section class="testimonial pg-bg-cl">
         <div class=" pad-top-90 container">

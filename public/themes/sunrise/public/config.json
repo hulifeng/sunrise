@@ -1,0 +1,42 @@
+{
+  "name": "模板全局配置",
+  "action": "public/Config",
+  "description": "模板全局配置文件",
+  "is_public": "1",
+  "order": 0.0,
+  "more": {
+    "vars": {
+      "gl_address": {
+        "title": "公司地址",
+        "value": "",
+        "type": "text",
+        "tip": "请输入公司地址",
+        "rule": []
+      },
+      "gl_mobile": {
+        "title": "手机号码",
+        "value": [],
+        "type": "array",
+        "item": {
+          "mobile": {
+            "title": "手机号码",
+            "type": "text",
+            "value": ""
+          }
+        }
+      },
+      "gl_email": {
+        "title": "邮箱",
+        "value": "",
+        "type": "text",
+        "tip": "请输入邮箱",
+        "rule": {
+          "require": true
+        },
+        "message": {
+          "require": "邮箱必填"
+        }
+      }
+    }
+  }
+}

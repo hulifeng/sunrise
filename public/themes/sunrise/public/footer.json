@@ -1,0 +1,83 @@
+{
+  "name": "底部信息",
+  "action": "public/Config",
+  "description": "底部信息配置",
+  "is_public": "1",
+  "order": 0.0,
+  "more": {
+    "vars": {
+      "copyright": {
+        "title": "版权信息",
+        "value": "网站版权信息",
+        "type": "text",
+        "tip": "",
+        "rule": []
+      }
+    },
+    "widgets": {
+      "contact": {
+        "title": "",
+        "display": "1",
+        "vars": {}
+      },
+      "tutor": {
+        "title": "推荐阅读",
+        "display": "1",
+        "vars": {
+          "category": {
+            "title": "文章分类",
+            "value": "1",
+            "type": "text",
+            "dataSource": {
+              "api": "portal/Category/index",
+              "multi": false
+            },
+            "tip": "选择文章分类",
+            "rules": []
+          },
+          "count": {
+            "title": "信息数量",
+            "value": "2",
+            "type": "number",
+            "tip": "显示文章标题的数量"
+          }
+        }
+      },
+      "about_us": {
+        "title": "",
+        "display": "1",
+        "vars": {
+          "text": {
+            "title": "about us",
+            "value": "",
+            "type": "text",
+            "tip": "关于我们的内容"
+          }
+        }
+      },
+      "bottom_nav": {
+        "title": "底部导航",
+        "display": "1",
+        "vars": {
+          "nav_title": {
+            "title": "导航名称",
+            "value": "",
+            "type": "text",
+            "tip": "底部导航名称",
+            "rule": []
+          },
+          "nav_cat": {
+            "title": "导航选择",
+            "value": "2",
+            "type": "text",
+            "tip": "请选择导航",
+            "dataSource": {
+              "api": "admin/Nav/index",
+              "multi": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

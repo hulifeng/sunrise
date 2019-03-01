@@ -8,43 +8,47 @@
                 <!--Two 4th column-->
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="row clearfix">
-                        <div class="col-lg-7 col-sm-6 col-xs-12 column">
-                            <div class="footer-widget about-widget">
-                                <div class="logo"><a href="index.html"><img src="__TMPL__/public/assets/images/logo-2.png"
-                                                                            class="img-responsive" alt=""></a></div>
+                        <!--CONTACT US-->
+                        <widget name="contact">
+                            <div class="col-lg-7 col-sm-6 col-xs-12 column">
+                                <div class="footer-widget about-widget">
+                                    <h2>{$widget.title}</h2>
 
+                                    <ul class="contact-info">
+                                        <notempty name="$theme_vars.gl_address">
+                                            <li><span class="icon fa fa-map-marker"></span>{$theme_vars.gl_address}</li>
+                                        </notempty>
+                                        <notempty name="$theme_vars.gl_mobile">
+                                            <li><span class="icon fa fa-phone"></span>
+                                                <php>
+                                                    foreach ($theme_vars['gl_mobile'] as $key => $val) {
+                                                        if (($key + 1) == sizeof($theme_vars['gl_mobile'])) {
+                                                            echo $val['mobile'];
+                                                        } else {
+                                                            echo $val['mobile'] . ', ';
+                                                        }
+                                                    }
+                                                </php>
+                                            </li>
+                                        </notempty>
+                                        <notempty name="$theme_vars.gl_email">
+                                            <li><span class="icon fa fa-envelope-o"></span>{$theme_vars.gl_email}</li>
+                                        </notempty>
+                                    </ul>
 
-                                <ul class="contact-info">
-                                    <li><span class="icon fa fa-map-marker"></span> 447, Broad Way, NewYork</li>
-                                    <li><span class="icon fa fa-phone"></span> +11-08-35679</li>
-                                    <li><span class="icon fa fa-envelope-o"></span> hello@ecology.com</li>
-                                </ul>
-
-                                <div class="social-links-two clearfix">
-                                    <a href="#" class="facebook img-circle"><span
-                                            class="fa fa-facebook-f"></span></a>
-                                    <a href="#" class="twitter img-circle"><span
-                                            class="fa fa-twitter"></span></a>
-                                    <a href="#" class="google-plus img-circle"><span
-                                            class="fa fa-google-plus"></span></a>
-                                    <a href="#" class="linkedin img-circle"><span
-                                            class="fa fa-pinterest-p"></span></a>
-                                    <a href="#" class="linkedin img-circle"><span
-                                            class="fa fa-linkedin"></span></a>
                                 </div>
-
                             </div>
-                        </div>
+                        </widget>
 
-                        <!--Footer Column-->
-                        <div class="col-lg-5 col-sm-6 col-xs-12 column">
-                            <h2>About us</h2>
-                            <div class="footer-widget links-widget">
-
-                                <p>Above the law sunny days sweeping the clouds away fateful trip .That started
-                                    my way to where the air is sweet can you tell me how to get .</p>
+                        <!--ABOUT US-->
+                        <widget name="about_us">
+                            <div class="col-lg-5 col-sm-6 col-xs-12 column">
+                                <h2>{$widget.title}</h2>
+                                <div class="footer-widget links-widget">
+                                    <p>{$widget.vars.text}</p>
+                                </div>
                             </div>
-                        </div>
+                        </widget>
                     </div>
                 </div>
                 <!--Two 4th column End-->
@@ -53,52 +57,44 @@
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="row clearfix">
 
-
-                        <!--Footer Column-->
-                        <div class="col-lg-5 col-sm-6 col-xs-12 column">
-                            <div class="footer-widget links-widget">
-                                <h2>Recent projects</h2>
-                                <ul>
-                                    <li><a href="#">tree plantation</a></li>
-                                    <li><a href="#">Drinking water supply</a></li>
-                                    <li><a href="#">Campaign</a></li>
-                                    <li><a href="#">Waste management</a></li>
-
-
-                                </ul>
-
-                            </div>
-                        </div>
-
-                        <!--Footer Column-->
-                        <div class="col-lg-7 col-sm-6 col-xs-12 column">
-                            <div class="footer-widget news-widget">
-                                <h2>Latest News</h2>
-
-                                <!--News Post-->
-                                <div class="news-post">
-                                    <div class="icon"></div>
-                                    <div class="news-content">
-                                        <figure class="image-thumb"><img src="__TMPL__/public/assets/images/resource/post-thumb-4.jpg"
-                                                                         alt=""></figure><a href="#">That started my way to where the air
-                                        is sweet can you tell me how to get</a>
-                                    </div>
-
+                        <!--PRODUCT CENTER-->
+                        <widget name="bottom_nav">
+                            <div class="col-lg-5 col-sm-6 col-xs-12 column">
+                                <div class="footer-widget links-widget">
+                                    <h2>{$widget.vars.nav_title}</h2>
+                                    <navigation nav-id="$widget.vars.nav_cat" root="" id="main-navigation">
+                                        <navigationMenu root="li">
+                                            <a href="{$menu.href|default=''}" target="{$menu.target|default=''}">{$menu.name|default=''}</a>
+                                        </navigationMenu>
+                                    </navigation>
                                 </div>
-
-                                <!--News Post-->
-                                <div class="news-post">
-                                    <div class="icon"></div>
-                                    <div class="news-content">
-                                        <figure class="image-thumb"><img src="__TMPL__/public/assets/images/resource/post-thumb-5.jpg"
-                                                                         alt=""></figure><a href="#">That started my way to where the air
-                                        is sweet can you tell me how to get</a>
-                                    </div>
-
-                                </div>
-
                             </div>
-                        </div>
+                        </widget>
+
+                        <!--LATEST NEWS-->
+                        <widget name="tutor">
+                            <div class="col-lg-7 col-sm-6 col-xs-12 column">
+                                <div class="footer-widget news-widget">
+                                    <h2>{$widget.title}</h2>
+                                    <php>
+                                        $where = [
+                                            'post.recommended' => ['eq', 1]
+                                        ];
+                                    </php>
+                                    <portal:articles limit="2" order="post.published_time DESC" where="$where" categoryIds="$widget.vars.category">
+                                        <div class="news-post">
+                                            <div class="icon"></div>
+                                            <div class="news-content">
+                                                <figure class="image-thumb">
+                                                    <img src="{$vo.more.thumbnail|cmf_get_image_url}" alt="">
+                                                </figure>
+                                                <a href="#">{$vo.post_content|remove_label}</a>
+                                            </div>
+                                        </div>
+                                    </portal:articles>
+                                </div>
+                            </div>
+                        </widget>
                     </div>
                 </div>
                 <!--Two 4th column End-->
@@ -112,9 +108,7 @@
     <div class="footer-bottom">
         <div class="auto-container clearfix">
             <!--Copyright-->
-            <div class="copyright text-center">Copyright &copy; 2017.Company name All rights reserved.More
-                Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect
-                from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></div>
+            <div class="copyright text-center">{$theme_vars.copyright|default=''} <notempty name="$site_info.site_icp"> - {$site_info.site_icp}</notempty></div>
         </div>
     </div>
 

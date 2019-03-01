@@ -106,6 +106,51 @@
             "placeholder": "请选择商品分类"
           }
         }
+      },
+      "four_section": {
+        "title": "第四版块",
+        "description": "第四版块描述",
+        "display": "1",
+        "vars": {
+          "news": {
+            "title": "新闻版块",
+            "value": [],
+            "type": "array",
+            "item": {
+              "category_id": {
+                "title": "文章类别ID",
+                "value": "",
+                "type": "text",
+                "dataSource": {
+                  "api": "portal/Category/index",
+                  "multi": "false"
+                },
+                "tip": "请选择新闻类别"
+              },
+              "count": {
+                "title": "文章显示的数量",
+                "value": 3,
+                "type": "number",
+                "tip": "每个栏目的文章数量"
+              }
+            }
+          },
+          "slide": {
+            "title": "展示版块",
+            "value": "",
+            "type": "text",
+            "dataSource": {
+              "api": "portal/Category/index",
+              "multi": false
+            }
+          },
+          "bg_image": {
+            "title": "图片",
+            "value": "",
+            "type": "image",
+            "tip": "请选择右部背景图片，不传的话容易导致页面样式错乱！建议尺寸：670x520"
+          }
+        }
       }
     }
   }
